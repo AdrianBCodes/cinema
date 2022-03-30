@@ -1,0 +1,30 @@
+<h1>Movie list</h1>
+<button (click)="goToAddMovie()" class="btn btn-dark mx-1"> Add movie</button>
+<table class="table table-striped">
+    
+    <thead>
+        <tr>
+            <th> Name</th>
+            <th> Description</th>
+            <th> Date</th>
+            <th> Ticket Price</th>
+            <!-- <th> Occupied Seats</th> -->
+            <th> Length</th>
+            <th> Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movies">
+            <td> {{movie.name}} </td>
+            <td> {{movie.description}} </td>
+            <td> {{movie.date}} </td>
+            <td> {{movie.ticketPrice}} </td>
+            <td> {{movie.length}} </td>
+            <td>
+                <button (click)="editMovie(movie.id)" class="btn btn-dark mx-1"> Edit</button>
+                <button (click)="deleteMovie(movie.id)" class="btn btn-danger mx-1"> Delete</button>
+                <button (click)="movieDetails(movie.id)" class="btn btn-dark mx-1"> Details</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
